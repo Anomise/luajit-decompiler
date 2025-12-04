@@ -19,20 +19,20 @@ Hoặc đơn giản hơn:
 
 ### Nếu có Visual Studio:
 ```cmd
-cd luajit-decompiler-v2-master
+cd luajit-decompiler-master
 build.bat
 ```
 
 ### Hoặc build thủ công:
 ```cmd
-cd luajit-decompiler-v2-master
+cd luajit-decompiler-master
 "C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\Build\vcvars64.bat"
 cl /EHsc /std:c++17 /O2 /W3 main.cpp bytecode\bytecode.cpp bytecode\prototype.cpp lua\lua.cpp ast\ast.cpp /Fe:luajit-decompiler-v2.exe /link /SUBSYSTEM:CONSOLE
 ```
 
 ### Nếu có MinGW:
 ```cmd
-cd luajit-decompiler-v2-master
+cd luajit-decompiler-master
 g++ -std=c++17 -O2 -Wall -Wextra main.cpp bytecode/bytecode.cpp bytecode/prototype.cpp lua/lua.cpp ast/ast.cpp -o luajit-decompiler-v2.exe
 ```
 
