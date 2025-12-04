@@ -1,0 +1,87 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build LuaJIT Decompiler (MSVC)",
+            "type": "shell",
+            "command": "cl",
+            "args": [
+                "/EHsc",
+                "/std:c++20",
+                "/O2",
+                "/W3",
+                "/J",
+                "main.cpp",
+                "bytecode\\bytecode.cpp",
+                "bytecode\\prototype.cpp",
+                "lua\\lua.cpp",
+                "ast\\ast.cpp",
+                "/Fe:luajit-decompiler-v2.exe",
+                "/link",
+                "/SUBSYSTEM:CONSOLE",
+                "user32.lib",
+                "comdlg32.lib",
+                "shlwapi.lib"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "dedicated"
+            },
+            "problemMatcher": ["$msCompile"],
+            "windows": {
+                "options": {
+                    "shell": {
+                        "executable": "cmd.exe",
+                        "args": [
+                            "/c",
+                            "\"${env:ProgramFiles}\\Microsoft Visual Studio\\2022\\Community\\VC\\Auxiliary\\Build\\vcvars64.bat\" && cl"
+                        ]
+                    }
+                }
+            }
+        },
+        {
+            "label": "Build LuaJIT Decompiler (MinGW)",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-std=c++17",
+                "-O2",
+                "-Wall",
+                "-Wextra",
+                "main.cpp",
+                "bytecode/bytecode.cpp",
+                "bytecode/prototype.cpp",
+                "lua/lua.cpp",
+                "ast/ast.cpp",
+                "-o",
+                "luajit-decompiler-v2.exe"
+            ],
+            "group": "build",
+            "presentation": {
+                "reveal": "always",
+                "panel": "dedicated"
+            },
+            "problemMatcher": ["$gcc"]
+        },
+        {
+            "label": "Initialize VS Environment",
+            "type": "shell",
+            "command": "cmd",
+            "args": [
+                "/c",
+                "\"${env:ProgramFiles}\\Microsoft Visual Studio\\2022\\Community\\VC\\Auxiliary\\Build\\vcvars64.bat\" && echo VS Environment initialized"
+            ],
+            "group": "build",
+            "presentation": {
+                "reveal": "always",
+                "panel": "dedicated"
+            }
+        }
+    ]
+}
+
