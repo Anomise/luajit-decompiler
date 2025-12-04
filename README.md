@@ -44,5 +44,5 @@ g++ -std=c++17 -O2 -Wall -Wextra main.cpp bytecode/bytecode.cpp bytecode/prototy
   3. Hoặc chạy task "Initialize VS Environment" trước
 
 - File `.vscode/tasks.json` đã được tạo sẵn với cấu hình build
-- Sau khi build thành công, file `luajit-decompiler-v2.exe` sẽ ở trong thư mục `luajit-decompiler-v2-master`
+- Sau khi build thành công, file `luajit-decompiler-v2.exe` sẽ ở trong thư mục `luajit-decompiler-master`
 
