@@ -1,4 +1,4 @@
-# Build trong Cursor/VSCode
+# Build trong VSCode
 
 ## Cách 1: Sử dụng Tasks (Khuyến nghị)
 
